@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React  from "react";
 import styles from "./Cart.module.css";
 import Modal from "../UI/Modal";
 
 const Cart = (props) => {
   const cartItems = (
     <ul className={styles["cart-items"]}>
-      {[{ id: "c1", name: 2, price: 12.99 }].map((item) => (
+      {[{ id: "c1", name: 'sushi', price: 12.99 }].map((item) => (
         <li>{item.name}</li>
       ))}
     </ul>
@@ -14,7 +14,7 @@ const Cart = (props) => {
 
   if (props.viewCart) {
     return (
-      <Modal>
+      <Modal handleCart={props.handleCart}>
         {cartItems}
         <div className={styles.total}>
           <span>Total Amount</span>
